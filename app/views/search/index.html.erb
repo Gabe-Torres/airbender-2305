@@ -1,1 +1,24 @@
-suhh
+<section>
+  <div id="total">
+    <ul>
+      <li>
+        <p>Total Fire Nation Members: <%= @members.count %></p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<div id="members">
+  <ul>
+    <% @members.each do |member| %>
+      <li>
+        <p>Name: <%= member.name %></p>
+        <p>Photo: <%= member.photo %></p>
+        <p>Allies: <%= member.allies %></p>
+        <p>Enemies: <%= member.enemies %></p>
+        <p>Affiliation: <%= member.affiliation %></p>
+      </li>
+      <% end %>
+    </ul>
+</div>

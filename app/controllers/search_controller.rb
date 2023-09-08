@@ -7,7 +7,14 @@ class SearchController < ApplicationController
     response = conn.get("/api/v1/characters?affiliation=#{nation}")
 
     data = JSON.parse(response.body, symbolize_names: true)
-    require 'pry'; binding.pry
-    
+
+    # @total_count = data.count
+
+    member = data
+
+    @members = member.map do |member_data|
+      Member.new(member_data)
+    end
+    # require 'pry'; binding.pry
   end
 end

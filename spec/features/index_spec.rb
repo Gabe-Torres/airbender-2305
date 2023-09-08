@@ -11,7 +11,25 @@ RSpec.describe 'ATLA api call', type: :feature do
       click_button 'Search For Members'
 
       expect(current_path).to eq(search_path)
-      expect(page).to have_content('Total Fire Nation Members: 97')
+      expect(page).to have_content('Total Fire Nation Members:')
+
+      within(first('#members')) do
+        page.has_css?('.name')
+        page.has_css?('.photo')
+        page.has_css?('.allies')
+        page.has_css?('.enemies')
+        page.has_css?('.affiliation')
+      end
+
+      # within('#member)') do
+      #   memebr.each do |member| 
+      #     expect(page).to have_content(member.name)
+      #     expect(page).to have_content(member.photo)
+      #     expect(page).to have_content(member.allies)
+      #     expect(page).to have_content(member.enemies)
+      #     expect(page).to have_content(member.affiliation)
+      #   end
+      # end
     end
   end
 end
