@@ -14,9 +14,9 @@
     <% @members.each do |member| %>
       <li>
         <p>Name: <%= member.name %></p>
-        <p>Photo: <%= member.photo %></p>
-        <p>Allies: <%= member.allies.present? ? member.allies : "None" %></p>
-        <p>Enemies: <%= member.enemies.present? ? member.enemies : "None" %></p>
+        <p>Photo: <img src="<%= member.photo %>"> </p>
+        <p>Allies: <%= member.allies.present? ? member.allies.join(', ') : "None" %></p>
+        <p>Enemies: <%= member.enemies.present? ? member.enemies.join(', ') : "None" %></p>
         <p>Affiliation: <%= member.affiliation %></p>
       </li>
       <% end %>
